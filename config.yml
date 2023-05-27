@@ -1,0 +1,68 @@
+baseURL: "https://yuhangbin.github.io/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+title: cboy's space
+paginate: 5
+theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+
+minify:
+    disableXML: true
+    # minifyOutput: true
+
+languages:
+    cn:
+        languageName: "中文"
+        weight: 1
+        taxonomies:
+          category: categories
+          tag: tags
+          series: series
+        menu:
+            main:
+                - name: 归档
+                  url: archives
+                  weight: 5
+                - name: 标签
+                  url: tags/
+                  weight: 10
+                - name: 搜索
+                  url: search/
+                  weight: 10
+
+    en:
+        languageName: "English"
+        weight: 2
+        taxonomies:
+          category: categories
+          tag: tags
+          series: series
+        menu:
+            main:
+                - name: Archive
+                  url: archives
+                  weight: 5
+                - name: Tags
+                  url: tags/
+                  weight: 10
+                - name: Search
+                  url: search/
+                  weight: 10
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    description: "everything about cboy"
+    author: cboy
+    # author: ["Me", "You"] # multiple authors
+
+    defaultTheme: light
