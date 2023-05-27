@@ -16,40 +16,21 @@ minify:
     # minifyOutput: true
 
 languages:
-    cn:
-        languageName: "中文"
-        weight: 1
-        taxonomies:
-          category: categories
-          tag: tags
-          series: series
-        menu:
-            main:
-                - name: 归档
-                  url: archives
-                  weight: 5
-                - name: 标签
-                  url: tags/
-                  weight: 10
-                - name: 搜索
-                  url: search/
-                  weight: 10
-
     en:
         languageName: "English"
-        weight: 2
+        weight: 10
         taxonomies:
           category: categories
           tag: tags
           series: series
         menu:
             main:
-                - name: Archive
+                - name: Archives
                   url: archives
                   weight: 5
                 - name: Tags
                   url: tags/
-                  weight: 10
+                  weight: 5
                 - name: Search
                   url: search/
                   weight: 10
@@ -66,3 +47,19 @@ params:
     # author: ["Me", "You"] # multiple authors
 
     defaultTheme: light
+
+    profileMode:
+        enabled: true
+        title: "Space for CharlieYu" # optional default will be site title
+        subtitle: "Everything will be fine."
+        imageUrl: "https://avatars.githubusercontent.com/u/17566866?v=4" # optional
+        imageTitle: "<title of image as alt>" # optional
+        imageWidth: 120 # custom size
+        imageHeight: 120 # custom size
+        buttons:
+            - name: Github
+              url: "https://github.com/yuhangbin"
+            - name: Twitter
+              url: "https://twitter.com/yuhangbin"
+            - name: Bilibili
+              url: "https://www.bilibili.com/"
