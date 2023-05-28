@@ -44,12 +44,41 @@ params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     description: "everything about cboy"
     author: cboy
-    # author: ["Me", "You"] # multiple authors
+
+    comments: true
 
     defaultTheme: light
+    # disableThemeToggle: true
+    ShowShareButtons: true
+    ShowReadingTime: true
+    # disableSpecial1stPost: true
+    displayFullLangName: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowRssButtonInSectionTermList: true
+    ShowToc: true
+
+    homeInfoParams:
+        Title: Happy to meet you.
+        Content: Keep track of personal things happening in the world.
+    socialIcons:
+        - name: github
+          url: "https://github.com/yuhangbin"
+        - name: Twitter
+          url: "https://twitter.com/yuhangbin"
+        - name: Discord
+          url: "https://discord.gg/FKTykR3Z"
+        # - name: Rss
+          # url: "index.xml"
+
+    # editPost:
+    #     URL: "https://github.com/yuhangbin"
+    #     Text: "Suggest Changes" # edit text
+    #     appendFilePath: true # to append file path to Edit link
 
     profileMode:
-        enabled: true
+        enabled: false
         title: "Space for CharlieYu" # optional default will be site title
         subtitle: "Everything will be fine."
         imageUrl: "https://avatars.githubusercontent.com/u/17566866?v=4" # optional
@@ -61,5 +90,5 @@ params:
               url: "https://github.com/yuhangbin"
             - name: Twitter
               url: "https://twitter.com/yuhangbin"
-            - name: Bilibili
-              url: "https://www.bilibili.com/"
+            - name: Discord
+              url: "https://discord.gg/FKTykR3Z"
