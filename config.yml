@@ -46,6 +46,18 @@ params:
     author: cboy
 
     comments: true
+    giscus:
+        repo: "yuhangbin/yuhangbin.github.io"
+        repoID: "283387947"
+        category: "General"
+        categoryID: "39529449"
+        mapping: "pathname"
+        reactionsEnabled: "1"
+        emitMetadata: "0"
+        inputPosition: "bottom"
+        theme: "light"
+        lang: "zh-CN"
+        loading: "lazy"
 
     defaultTheme: light
     # disableThemeToggle: true
