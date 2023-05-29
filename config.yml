@@ -48,16 +48,15 @@ params:
     comments: true
     giscus:
         repo: "yuhangbin/yuhangbin.github.io"
-        repoID: "283387947"
+        repoID: "MDEwOlJlcG9zaXRvcnkyODMzODc5NDc"
         category: "General"
-        categoryID: "39529449"
+        categoryID: "DIC_kwDOEOQoK84CWyvp"
         mapping: "pathname"
         reactionsEnabled: "1"
         emitMetadata: "0"
         inputPosition: "bottom"
         theme: "light"
         lang: "zh-CN"
-        loading: "lazy"
 
     defaultTheme: light
     # disableThemeToggle: true
