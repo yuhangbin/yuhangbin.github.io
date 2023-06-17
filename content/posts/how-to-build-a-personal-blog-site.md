@@ -15,23 +15,43 @@ tags: ["blog", "hugo", "github-pages"]
 - (推荐)[Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages)服务
 - 购买云服务器自建
 ### Static Website Engine
-- (推荐)Hugo
-[Github Topic: static-site-generator](https://github.com/topics/static-site-generator)
-[Hugo documentation] (https://gohugo.io/documentation/)
-**Static Site Theme**
-[Hugo Themes] (https://themes.gohugo.io/)
+- (推荐)Hugo [Hugo documentation](https://gohugo.io/documentation/)
+
+**Static Site Theme**: [Hugo Themes](https://themes.gohugo.io/)
+
+More: [Github Topic: static-site-generator](https://github.com/topics/static-site-generator)
+
 
 ## 扩展功能
 ### Github CICD
 配置Trigger（例如：git push）自动集成和部署
-[Cboy's Space Github CICD example file] (https://github.com/yuhangbin/yuhangbin.github.io/blob/main/.github/workflows/hugo.yml)
+
+可参考:[Cboy's Space Github CICD example file](https://github.com/yuhangbin/yuhangbin.github.io/blob/main/.github/workflows/hugo.yml)
+
 ### 评论
 **Gisgus**
-
+需要注意的点:
+- Github Pages仓库开通Discussion功能
+- [Github App Giscus](https://github.com/apps/giscus)去安装和授权
+- 在该[Gisgus](https://giscus.app/zh-CN)生成category ID和repository ID
+配置如下:
+```yml
+giscus:
+    repo: "yuhangbin/yuhangbin.github.io"
+    repoID: "***"
+    category: "General"
+    categoryID: "***"
+    mapping: "pathname"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    theme: "light"
+    lang: "zh-CN"
+```
 
 ### 数据统计
 **Google Analytics**
-(Google Analytics)[https://analytics.google.com/]注册账号并创建数据流
+[Google Analytics](https://analytics.google.com/)注册账号并创建数据流
 ```yml
 # 只需要在config中配置
 googleAnalytics: 衡量 ID
@@ -42,10 +62,10 @@ googleAnalytics: 衡量 ID
 1. 域名购买
 2. 域名解析-CNAME配置
 3. Github仓库配置Custom domain 
-参考: [Configuring a custom domain for your GitHub Pages site] (https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
+参考: [Configuring a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
 ### Markdown编辑器
-**VSCode**
-[VSCode Markdown Documentation] (https://code.visualstudio.com/docs/languages/markdown)
+**VSCode**:
+[VSCode Markdown Documentation](https://code.visualstudio.com/docs/languages/markdown)
 
 # 为什么搭建博客？
 ## 搭建动机历史
