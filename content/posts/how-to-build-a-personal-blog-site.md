@@ -31,6 +31,11 @@ tags: ["blog", "hugo", "github-pages"]
 
 ### 数据统计
 **Google Analytics**
+(Google Analytics)[https://analytics.google.com/]注册账号并创建数据流
+```yml
+# 只需要在config中配置
+googleAnalytics: 衡量 ID
+```
 
 ### 自选域名（包括备案）
 **步骤如下**
