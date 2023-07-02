@@ -2,7 +2,7 @@
 title: "Microservices in Action [0]"
 date: 2023-06-17T22:40:20+08:00
 author: "cboy"
-tags: ["Microservice" "Java" "Programming"]
+tags: ["Microservice", "Java", "Programming"]
 draft: false
 ---
 
