@@ -59,7 +59,7 @@ UGC音乐平台（MusicHub）- 用户在该平台上即使创造者也是消费�
 - 更新个人用户信息
 
 ## 系统设计
-![microservices.png](microservices.png)
+![microservices.png](/images/microservices.png)
 
 
 
