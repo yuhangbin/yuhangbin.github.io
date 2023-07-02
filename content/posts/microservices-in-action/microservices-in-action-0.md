@@ -59,7 +59,7 @@ UGC音乐平台（MusicHub）- 用户在该平台上即使创造者也是消费�
 - 更新个人用户信息
 
 ## 系统设计
-![Section 1.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/94034cfa-4ca0-49e9-bb6c-3b006cbb798a/Section_1.png)
+![microservices.png](microservices.png)
 
 
 
