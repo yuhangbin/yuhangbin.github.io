@@ -76,14 +76,14 @@ params:
         Title: Hello!
         Content: Welcome to cboy's space
     socialIcons:
-        - name: github
+        - name: Github
           url: "https://github.com/yuhangbin"
         - name: Twitter
           url: "https://twitter.com/yuhangbin"
         - name: Discord
           url: "https://discord.gg/FKTykR3Z"
-        # - name: Rss
-          # url: "index.xml"
+        - name: Rss
+          url: "index.xml"
 
     # editPost:
     #     URL: "https://github.com/yuhangbin"
