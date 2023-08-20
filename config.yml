@@ -73,8 +73,8 @@ params:
     ShowToc: true
 
     homeInfoParams:
-        Title: Hello!
-        Content: Welcome to cboy's space
+        Title: Welcome to cboy's space
+        Content: 
     socialIcons:
         - name: Github
           url: "https://github.com/yuhangbin"
