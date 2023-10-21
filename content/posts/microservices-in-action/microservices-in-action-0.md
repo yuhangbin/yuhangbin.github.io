@@ -5,6 +5,17 @@ author: "cboy"
 tags: ["Microservice", "Java", "Programming"]
 draft: false
 ---
+# Introduction
+该篇文章主要要用说明为什么要写这一系列的原因。在该系列中会按照搭建微服务的各个阶段所依赖的各个组件一个一个的去探索和分析碰到了什么问题，如何解决问题。
+## Series
+- API Gateway
+- Service Discovery
+- Communication between Services
+- Configuration Center
+- Observability
+- Transaction & Distributed Lock Manager
+#### Note
+本人报以60分的心态启动的该系列写作，理解有偏差或错误的请帮忙指出。后续会根据自己的认知的提升而进行改进文章。
 
 # What
 
@@ -24,6 +35,7 @@ Microservices是一种开发软件的架构和组织方法。通过把软件划�
 - https://microservices.io/
 - https://en.wikipedia.org/wiki/Monolithic_application
 - https://www.uber.com/en-JP/blog/microservice-architecture/
+- https://microservices.io/patterns/apigateway.html
 
 # Why
 
