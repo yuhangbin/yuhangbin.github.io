@@ -62,7 +62,7 @@ params:
     defaultTheme: light
     # disableThemeToggle: true
     ShowShareButtons: true
-    ShowReadingTime: true
+    ShowReadingTime: false
     # disableSpecial1stPost: true
     displayFullLangName: true
     ShowPostNavLinks: true
