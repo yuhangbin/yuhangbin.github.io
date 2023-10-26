@@ -40,8 +40,8 @@ BFF服务通常会有客户端团队来维护
    - 多了一层API Gateway需要保证其可用性足够高，避免服务不可用情况
    - 从开发者角度API发生变化时，需要多更新API Gateway服务
 # How 
-
 需求点: 获取歌单详情 （包含创作者信息，歌曲信息，歌单信息）
+
 
 需要考虑到调用失败时如何处理的问题？
 需要考虑把edge functions哪些功能实现在API Gateway上？
@@ -64,3 +64,7 @@ Kong / Traefik
 - Microservices Patterns With examples in Java - Chapter 8 External API patterns.
 - https://wikitech.wikimedia.org/wiki/API_Gateway
 - https://netflixtechblog.com/zuul-2-the-netflix-journey-to-asynchronous-non-blocking-systems-45947377fb5c
+- https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#glossary
+- https://microservices.io/patterns/apigateway.html
+- https://netflixtechblog.com/tagged/api-gateway
+- https://medium.com/geekculture/load-balancer-vs-reverse-proxy-vs-api-gateway-e9ec5809180c
