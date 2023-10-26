@@ -8,30 +8,24 @@ draft: true
 # Introduction
 分析一下微服务架构下常用的API Gateway，在单体服务是会质疑为什么需要在服务前再套一层网关服务，但是在微服务架构下API Gateway的需求就会出现，现在就来分析和讨论一下它。
 # What & Why
-## What is an API Gateway?
-// explain Gateway
-    // layer 4 and layer 7
-// Load Balancer vs API Gateway
-API routing and composition
-整合请求
-协议转换
-- Authentication—Verifying the identity of the client making the request.
-- Authorization—Verifying that the client is authorized to perform that particular
-operation.
-- Rate limiting —Limiting how many requests per second from either a specific cli-
-ent and/or from all clients.
-- Caching—Cache responses to reduce the number of requests made to the services.
-- Metrics collection—Collect metrics on API usage for billing analytics purposes.
-- Request logging—Log requests.
-## Why use an API Gateway?
-如何解决面对多种类型的客户端
-微服务的情况下避免一个请求依赖多个服务调用 （BFF with GraphQL）
-避免客户端依赖微服务接口导致升级会有冲突
-
-统一管理请求，负载均衡
+在单体服务的情况下，用户请求会直接通过负载均衡网关打到对应的单体业务服务器上，因为单体业务服务器上会包含几乎全部的业务代码，所以涉及到多模块调用时，只需要本地调用方法即可。而在微服务架构下，原本的单体服务会根据一定的规则（例如业务实体）拆分成多个服务，就需要考虑跨服务的多请求问题。举个具体的例子，用户想要请求歌单列表（假设歌单列表请求中需要包含用户信息，歌曲信息，歌单信息）。在单体服务情况下，用户客户端进行一次请求，服务器直接通过本地方法调用并做聚合返回给用户即可。在微服务架构下（假设用户服务，歌曲服务和歌单服务是拆分开的），可能需要分别向用户服务，歌曲服务和歌单服务发出三次请求。为了避免客户端请求三次（公网访问延迟导致用户体验下降，服务也更容易达到公网带宽瓶颈），抽象出API Gateway层来做请求的统一聚合，API Gateway本身就是一层服务，用户客户端只需要直接通过一次请求API Gateway服务获取歌单列表。（补充说明：API Gateway本身也是需要请求三次来进行聚合并返回给客户端的，但是API Gateway的请求走的是Local Area Network(LAN)，所以理论上内网带宽和延迟上都远优于公网环境）
+## API Gateway功能
+### 必要的功能
+- 聚合请求暴露接口供用户客户端调用 
+### 其它可选的功能
+- 协议转换
+- 边缘服务 edge function
+  - Authentication—Verifying the identity of the client making the request.
+  - Authorization—Verifying that the client is authorized to perform that particular
+  operation.
+  - Rate limiting —Limiting how many requests per second from either a specific cli-
+  ent and/or from all clients.
+  - Caching—Cache responses to reduce the number of requests made to the services.
+  - Metrics collection—Collect metrics on API usage for billing analytics purposes.
+  - Request logging—Log requests.
 ## BFF
-BFF是每个客户端服务独立一套API Gateway，BFF之间互相隔离
-BFF服务通常会有客户端团队来维护
+BFF的场景会出现在当客户端包含多种类型时，例如客户端包含移动端，Web网页端，第三方接口调用方。此时对于不同端可以考虑使用不同的API Gateway，而每端都采用独立的API Gateway可以称服务于各端的API Gateway为BFF(Backend for frontend)。
+BFF之间互相隔离，BFF服务通常会由各自的客户端团队来维护。
 ## Benefits and drawbacks of an API Gateway
 ### Benefits
    - 统一封装业务接口，客户端侧无须分散请求。
