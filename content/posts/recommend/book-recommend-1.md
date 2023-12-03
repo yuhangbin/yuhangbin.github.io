@@ -6,6 +6,8 @@ tags: []
 draft: true
 ---
 
+Books I was read (2023)
+
 DDIA
 Java Concurrency In Practice
 System Design Interview
