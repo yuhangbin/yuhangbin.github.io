@@ -31,23 +31,66 @@ BFF之间互相隔离，BFF服务通常会由各自的客户端团队来维护�
    - 统一封装业务接口，客户端侧无须分散请求。
    - 由于是请求的入口，所以可支持功能扩展（如协议转换，限流等）
 ### Drawbacks
-   - 多了一层API Gateway需要保证其可用性足够高，避免服务不可用情况
+   - 多了一层API Gateway需要保证其 可用性足够高，避免服务不可用情况
    - 从开发者角度API发生变化时，需要多更新API Gateway服务
 # How 
-需求点: 获取歌单详情 （包含创作者信息，歌曲信息，歌单信息）
+## 需求
+- 获取歌单详情（包含创作者信息，歌曲信息，歌单信息）
+- 用户鉴权
+- 接口限流
+## 实现
+### 接口
+#### API Gateway
+- 获取歌单详情
+#### 用户服务
+- 获取创作者
+#### 歌曲服务
+- 获取歌曲
+#### 歌单服务
+- 获取歌单
+### 数据表
+使用MySQL作为数据库，数据表如下:
+```sql
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE user (
+    `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '用户id',
+    `name` varchar(128) NOT NULL COMMENT '用户名',
+    `create_time` datetime NOT NULL COMMENT '创建时间',
+    `update_time` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+DROP TABLE IF EXISTS `song`;
+CREATE TABLE song (
+    `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '歌曲id',
+    `user_id` bigint unsigned NOT NULL COMMENT '创作者id',
+    `song_name` varchar(128) NOT NULL COMMENT '歌名',
+    `cover` varchar(512) NOT NULL DEFAULT '' COMMENT '歌曲封面',
+    `duration` varchar(32) NOT NULL COMMENT '歌曲时长',
+    `download_link` varchar(512) NOT NULL COMMENT '歌曲下载链接',
+    `create_time` datetime NOT NULL COMMENT '创建时间',
+    `update_time` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-需要考虑到调用失败时如何处理的问题？
-需要考虑把edge functions哪些功能实现在API Gateway上？
-    routing, rate limiting and authentication
-## How API Gateway Design
-Performance and scalability
-    Nonblocking I/O
-## Cases In Work
-### xxx Company which I was stay before
+DROP TABLE IF EXISTS `playlist`;
+CREATE TABLE playlist (
+    `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '歌单id',
+    `name` varchar(128) NOT NULL COMMENT '歌单名称',
+    `song_id_list` JSON NOT NULL DEFAULT '[]' COMMENT '歌曲id列表',
+    `create_time` datetime NOT NULL COMMENT '创建时间',
+    `update_time` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+```
+### 实现细节
+- 需要考虑到调用失败时如何处理的问题？
+- 需要考虑把edge functions哪些功能实现在API Gateway上？
+
+## 工作中使用过的API Gateway
+### xxx Company
 公司内部提供API Gateway平台主要是提供请求路由和协议转换的功能。业务方通过Thrift IDL文件来创建API Gateway服务。从服务端团队和客户端团队角度分别来说一下使用方式，客户端团队可以自己维护一个BFF服务来做接口的聚合并且暴露给客户端服务使用，通常是使用NodeJS+Thrift协议来实现；服务端团队使用方式则是需要可以直接在业务层实现接口聚合通过暴露接口API Gateway来暴露接口。接口的更新基本需要保证兼容旧版本。
 ## Open Source Projects
-### Netflix Zuul
 ### Spring Cloud Gateway
 Kong / Traefik
 

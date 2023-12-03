@@ -9,6 +9,7 @@ draft: false
 该篇文章主要要用说明为什么要写这一系列的原因。在该系列中会按照搭建微服务的各个阶段所依赖的各个组件一个一个的去探索和分析碰到了什么问题，如何解决问题。
 ## 系列
 - API Gateway
+- CI & CD
 - Service Discovery
 - Communication between Services
 - Configuration Center
