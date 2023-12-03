@@ -3,7 +3,7 @@ title: "Microservices in Action 1 - API Gateway"
 date: 2023-07-02T20:54:35+08:00
 author: "cboy"
 tags: ["Microservice", "Programming"]
-draft: true
+draft: false
 ---
 # Introduction
 分析一下微服务架构下常用的API Gateway，在单体服务是会质疑为什么需要在服务前再套一层网关服务，但是在微服务架构下API Gateway的需求就会出现，现在就来分析和讨论一下它。
