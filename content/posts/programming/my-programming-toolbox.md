@@ -18,6 +18,8 @@ draft: false
 | 右/right | Control + f | Control + f | l | Control + f |
 | 行首/Move Caret to Line Start | Control + a | Control + a | ^ | Control + a |
 | 行尾/Move Caret to Line End | Control + e | Control + e | $ | Control + e |
+| 下一页/Page Down | Control + d |  |  |  |
+| 上一页/Page Up | Control + u |  |  |  |
 | 选中/Add Selection for Next Occurrence | Control + g |  |  |  |
 | 全选/Select All Occurrences | Control + Command + g |  |  |  |
 | 撤销/Undo | Command + z |  | u | Command + z |
