@@ -57,3 +57,8 @@ draft: false
 - Amazon.cn
 - 淘宝
 - 得物
+
+## Articles
+
+- **[Hiking gear: what to bring?](https://www.salomon.com/en-gb/outdoor/outdoor-advice/hiking-gear-what-bring)**
+- **[Day Hiking Essentials Checklist](https://www.rei.com/learn/expert-advice/day-hiking-checklist.html)**
