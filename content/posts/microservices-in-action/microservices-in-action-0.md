@@ -13,7 +13,7 @@ draft: false
 - Service Discovery
 - Communication between Services
 - Configuration Center
-- Observability
+- Monitoring & Observability
 - Transaction & Distributed Lock Manager
 #### Tips
 本人报以60分的心态启动的该系列写作，理解有偏差或错误的请帮忙指出。后续会根据自己的认知的提升而进行改进文章。
