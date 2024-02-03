@@ -97,7 +97,7 @@ Kong / Traefik
 ## API Gateway using GraphQL
 使用图数据库优化调用部分
 
-# Reference
+# References
 - Microservices Patterns With examples in Java - Chapter 8 External API patterns.
 - https://wikitech.wikimedia.org/wiki/API_Gateway
 - https://netflixtechblog.com/zuul-2-the-netflix-journey-to-asynchronous-non-blocking-systems-45947377fb5c
