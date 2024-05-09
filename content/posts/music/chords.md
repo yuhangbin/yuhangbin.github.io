@@ -8,7 +8,7 @@ draft: false
 
 ## Chord
 
-以C为例子，列出你目前认识的所有和弦
+以C为例子，列出目前认识的所有和弦
 
 C major C D E F G A B    
 
