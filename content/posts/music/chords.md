@@ -14,6 +14,10 @@ C major C D E F G A B
 
 C minor C D Eb F G Ab Bb
 
+1 2 3 4 5 6 7 指代 C D E F G A B
+
+C D Eb F G Ab Bb 则为 1 2 b3 4 5 b6 b7
+
 | Chord Symbol Structure | Root | explain the kind of chord |
 | --- | --- | --- |
 | Cmaj7 | C | maj7 |
